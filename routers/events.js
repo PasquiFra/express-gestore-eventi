@@ -5,7 +5,7 @@ const router = express.Router();
 // import dei controllers - middlewares
 const eventController = require("../controllers/events")
 
-// dichiaro le rotte
+//! dichiaro le rotte >> /events <<
 // rotta index
 router.get("/", eventController.index);
 // rotta create

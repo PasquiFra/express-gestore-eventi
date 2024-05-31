@@ -7,9 +7,10 @@ const eventController = require("../controllers/events")
 
 // dichiaro le rotte
 // rotta index
-router.get("/", eventController);
+router.get("/", eventController.index);
 // rotta create
-router.post("/", eventController);
+router.post("/", eventController.create);
 // rotta update
-router.put("/:event", eventController);
+router.put("/:event", eventController.update);
 
+module.exports = router

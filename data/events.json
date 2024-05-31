@@ -5,5 +5,26 @@
         "description": "Il più grande convegno di criptovalute dell'anno con i maggiori esperti del settore.",
         "date": "2024-09-15",
         "maxSeats": "5000"
+    },
+    {
+        "id": 2,
+        "title": "Blockchain Expo",
+        "description": "Un'esposizione completa sulle tecnologie blockchain e il loro impatto su vari settori.",
+        "date": "2024-10-10",
+        "maxSeats": "3000"
+    },
+    {
+        "id": 3,
+        "title": "Crypto Innovators Summit",
+        "description": "Un vertice per innovatori e imprenditori nel campo delle criptovalute.",
+        "date": "2024-11-05",
+        "maxSeats": "1500"
+    },
+    {
+        "id": 4,
+        "title": "DeFi Conference",
+        "description": "Una conferenza dedicata alla finanza decentralizzata e alle sue applicazioni.",
+        "date": "2024-07-20",
+        "maxSeats": "2000"
     }
 ]

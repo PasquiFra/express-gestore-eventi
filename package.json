@@ -1,0 +1,17 @@
+{
+  "name": "express-gestore-eventi",
+  "version": "1.0.0",
+  "description": "Creating an app that manages events",
+  "main": "app.js",
+  "scripts": {
+    "dev": "app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.2"
+  }
+}

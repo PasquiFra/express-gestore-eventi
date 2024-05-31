@@ -10,7 +10,9 @@ class Event {
     date;
     maxSeats;
 
-    constructor(id, title, description, date, maxSeats) {
+    constructor(title, description, date, maxSeats) {
+
+        this.id = this.createId()
 
     }
 
@@ -24,5 +26,16 @@ class Event {
         const filePath = path.join(__dirname, "data/events.json");
         const newEvent = JSON.stringify(newData)
         fs.writeFileSync(filePath, newEvent);
+    }
+
+    createId() {
+        const events = Event.readJSONdata()
+        let id = 1;
+        events.forEach(event => {
+            if (event.id >= id) {
+                id = event.id + 1
+            }
+        });
+        return id
     }
 }

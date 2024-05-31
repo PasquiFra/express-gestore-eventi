@@ -1,18 +1,22 @@
+const errorsLogger = require('../middlewares/errorsLogger.js');
 const Event = require('../models/EventModel.js');
 
-// Creo i controller delle rotte /events
+//Creo i controller delle rotte /events
 const index = (req, res) => {
 
     const events = Event.readJSONdata();
 
+    // se ho una query che vuole filtrare per id entro qua 
     if (req.query.id) {
 
-        const { id } = req.query
+        const id = req.query.id
 
-        eventToShow = events.find(event => event.id == id)
+        eventToShow = events.find(e => e.id == id)
 
         if (!eventToShow) {
-            return res.status(404).send("Evento non trovato!")
+            const err = new Error(`Evento non trovato`);
+            err.status = 404;
+            return errorsLogger(err, req, res);
         }
 
         return res.format({
@@ -27,7 +31,34 @@ const index = (req, res) => {
         })
     }
 
+    // se ho una query che vuole filtrare per titolo entro qua 
+    if (req.query.title) {
+        const { title } = req.query
 
+        console.log("entrato", title)
+
+
+        eventsToShow = events.filter(event => event.title.includes(title))
+
+        if (!eventsToShow) {
+            const err = new Error(`Evento/i non trovato/i`);
+            err.status = 404;
+            return errorsLogger(err, req, res);
+        }
+
+        return res.format({
+
+            json: () => {
+                res.status(200).json({
+                    message: `Eventi trovati`,
+                    data: eventsToShow
+                })
+            }
+
+        })
+    }
+
+    // Altrimenti se non ho query restituisco tutti gli eventi
     res.format({
 
         json: () => {

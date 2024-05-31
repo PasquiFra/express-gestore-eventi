@@ -2,6 +2,11 @@
 const fs = require("fs");
 const path = require("path");
 
+//import del model reservation
+const Reservation = require("./Reservation");
+
+// import dei middlewares
+const errorsLogger = require('../middlewares/errorsLogger.js');
 
 class Event {
     id;
@@ -47,6 +52,33 @@ class Event {
         const events = Event.readJSONdata();
         const newEventsList = [...events, newEvent];
         Event.saveJSONdata(newEventsList);
+    }
+
+    static getEventByID(id) {
+        const events = Event.readJSONdata()
+        return events.find(e => e.id == id)
+    }
+
+    static getEventByTitle(title) {
+        const events = Event.readJSONdata()
+        return events.filter(event => event.title.includes(title))
+    }
+
+    static getReservations(myEventId) {
+
+        //lista prenotazioni
+        const reservations = Reservation.readJSONdata();
+
+        if (!reservations || !reservations.length) {
+            const err = new Error(`Non ho trovato prenotazioni`);
+            err.status = 404;
+            return 'Non ho trovato prenotazioni';
+        }
+
+        //trovo la lista di prenotazioni per l'evento selezionato
+        const eventReservations = reservations.filter(r => r.eventId == myEventId);
+
+        return eventReservations
     }
 }
 

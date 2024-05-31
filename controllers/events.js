@@ -17,7 +17,7 @@ const index = (req, res) => {
 
         const id = req.query.id
 
-        eventToShow = events.find(e => e.id == id)
+        eventToShow = Event.getEventByID(id)
 
         if (!eventToShow) {
             const err = new Error(`Evento non trovato`);
@@ -41,7 +41,7 @@ const index = (req, res) => {
     if (req.query.title) {
         const { title } = req.query
 
-        eventsToShow = events.filter(event => event.title.includes(title))
+        eventsToShow = Event.getEventByTitle(title);
 
         if (!eventsToShow) {
             const err = new Error(`Evento/i non trovato/i`);

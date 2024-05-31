@@ -6,6 +6,12 @@ const index = (req, res) => {
 
     const events = Event.readJSONdata();
 
+    if (!events || !events.length) {
+        const err = new Error(`Non ci sono eventi in programma`);
+        err.status = 404;
+        return errorsLogger(err, req, res);
+    }
+
     // se ho una query che vuole filtrare per id entro qua 
     if (req.query.id) {
 
@@ -34,9 +40,6 @@ const index = (req, res) => {
     // se ho una query che vuole filtrare per titolo entro qua 
     if (req.query.title) {
         const { title } = req.query
-
-        console.log("entrato", title)
-
 
         eventsToShow = events.filter(event => event.title.includes(title))
 

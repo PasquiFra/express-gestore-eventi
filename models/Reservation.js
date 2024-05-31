@@ -2,8 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 
-
-class Reservation extends Event {
+class Reservation {
     id;
     firstName;
     lastName;
@@ -12,7 +11,7 @@ class Reservation extends Event {
 
     constructor(firstName, lastName, email, eventId) {
 
-        this.id = this.createId();
+        this.id = this.createReservationId();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -32,7 +31,7 @@ class Reservation extends Event {
         fs.writeFileSync(filePath, newReservation);
     }
 
-    createId() {
+    createReservationId() {
         const reservations = Reservation.readJSONdata()
         let id = 1;
         reservations.forEach(reservation => {
@@ -43,7 +42,7 @@ class Reservation extends Event {
         return id
     }
 
-    static saveEvent(newReservation) {
+    static saveReservation(newReservation) {
         const reservations = Reservation.readJSONdata();
         const newReservationsList = [...reservations, newReservation];
         Reservation.saveJSONdata(newReservationsList);

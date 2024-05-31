@@ -54,5 +54,12 @@
         "lastName": "Viola",
         "email": "elena.viola@example.com",
         "eventId": 4
+    },
+    {
+        "id": 9,
+        "firstName": "Pippo",
+        "lastName": "Baudo",
+        "email": "Pippo.Baudo@mail.it",
+        "eventId": "1"
     }
 ]

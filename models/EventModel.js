@@ -12,18 +12,22 @@ class Event {
 
     constructor(title, description, date, maxSeats) {
 
-        this.id = this.createId()
+        this.id = this.createId();
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.maxSeats = maxSeats;
 
     }
 
     static readJSONdata() {
-        const filePath = path.join(__dirname, "data/events.json");
+        const filePath = path.join(__dirname, "../data/events.json");
         const data = fs.readFileSync(filePath, "utf-8");
         return JSON.parse(data);
     }
 
     static saveJSONdata(newData) {
-        const filePath = path.join(__dirname, "data/events.json");
+        const filePath = path.join(__dirname, "../data/events.json");
         const newEvent = JSON.stringify(newData)
         fs.writeFileSync(filePath, newEvent);
     }
@@ -38,4 +42,12 @@ class Event {
         });
         return id
     }
+
+    static saveEvent(newEvent) {
+        const events = Event.readJSONdata();
+        const newEventsList = [...events, newEvent];
+        Event.saveJSONdata(newEventsList);
+    }
 }
+
+module.exports = Event

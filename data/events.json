@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "title": "CryptoCon 2024",
+        "description": "Il più grande convegno di criptovalute dell'anno con i maggiori esperti del settore.",
+        "date": "2024-09-15",
+        "maxSeats": "5000"
+    }
+]

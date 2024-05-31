@@ -1,0 +1,62 @@
+[
+    {
+        "title": "CryptoCon 2024",
+        "description": "Il più grande convegno di criptovalute dell'anno con i maggiori esperti del settore.",
+        "date": "2024-09-15",
+        "maxSeats": 5000
+    },
+    {
+        "title": "Blockchain Expo",
+        "description": "Un'esposizione completa sulle tecnologie blockchain e il loro impatto su vari settori.",
+        "date": "2024-10-10",
+        "maxSeats": 3000
+    },
+    {
+        "title": "Crypto Innovators Summit",
+        "description": "Un vertice per innovatori e imprenditori nel campo delle criptovalute.",
+        "date": "2024-11-05",
+        "maxSeats": 1500
+    },
+    {
+        "title": "DeFi Conference",
+        "description": "Una conferenza dedicata alla finanza decentralizzata e alle sue applicazioni.",
+        "date": "2024-07-20",
+        "maxSeats": 2000
+    },
+    {
+        "title": "NFT Expo",
+        "description": "Esplora il mondo dei token non fungibili e il loro utilizzo nell'arte e oltre.",
+        "date": "2024-08-25",
+        "maxSeats": 1000
+    },
+    {
+        "title": "Crypto Security Summit",
+        "description": "Un convegno incentrato sulla sicurezza nelle transazioni criptovalutarie.",
+        "date": "2024-06-15",
+        "maxSeats": 2500
+    },
+    {
+        "title": "Ethereum DevCon",
+        "description": "L'incontro annuale degli sviluppatori Ethereum per discutere delle ultime novità e sviluppi.",
+        "date": "2024-12-10",
+        "maxSeats": 3000
+    },
+    {
+        "title": "Crypto Compliance Forum",
+        "description": "Una discussione sulle normative e le conformità legate alle criptovalute.",
+        "date": "2024-05-30",
+        "maxSeats": 1200
+    },
+    {
+        "title": "Bitcoin World Congress",
+        "description": "Il congresso mondiale dedicato al Bitcoin e alle sue prospettive future.",
+        "date": "2024-09-01",
+        "maxSeats": 4000
+    },
+    {
+        "title": "Crypto Trading Expo",
+        "description": "Una fiera per trader di criptovalute con workshop e presentazioni.",
+        "date": "2024-11-22",
+        "maxSeats": 2500
+    }
+]

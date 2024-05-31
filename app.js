@@ -5,6 +5,10 @@ const port = 3000;
 //! Import dei routers - middlewares - controllers
 const eventRouter = require("./routers/events");
 
+//import del modulo per leggere il body della request
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //! Lista delle rotte 
 // Rotta Home
 app.get("/", (req, res) => {

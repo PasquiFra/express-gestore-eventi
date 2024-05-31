@@ -5,6 +5,29 @@ const index = (req, res) => {
 
     const events = Event.readJSONdata();
 
+    if (req.query.id) {
+
+        const { id } = req.query
+
+        eventToShow = events.find(event => event.id == id)
+
+        if (!eventToShow) {
+            return res.status(404).send("Evento non trovato!")
+        }
+
+        return res.format({
+
+            json: () => {
+                res.status(200).json({
+                    message: `Restituisco l'evento con id ${id}`,
+                    data: eventToShow
+                })
+            }
+
+        })
+    }
+
+
     res.format({
 
         json: () => {
